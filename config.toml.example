@@ -1,0 +1,20 @@
+amqp_url = "amqps://activemq.domain.local:5671,amqps://activemq2.domain.local:5671"
+
+[tls]
+ca_cert = "/etc/pki/tls/certs/ca-bundle.crt"
+certfile = "/etc/messaging-poc/client.crt"
+client_name = "client-app"
+keyfile = "/etc/messaging-poc/client.key"
+
+[[virtual_topics]]
+durable = true
+topic = "eng.some_service.>"
+queue_name = "app-prod"
+
+[[virtual_topics]]
+durable = true
+topic = "eng.some_other_service.>"
+queue_name = "app-prod"
+
+[consumer_config]
+example_key = "for my consumer"
