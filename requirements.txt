@@ -1,0 +1,2 @@
+jsonschema
+python-qpid-proton
